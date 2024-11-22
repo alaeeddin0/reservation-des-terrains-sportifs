@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'LoginController::index');// Affiche le formulaire de login
 $routes->get('/joueur/JoueurHome', 'JoueurHomeController::index');//affiche la page d'acceuil de joueur
 $routes->get('/register','RegisterController::index');// affiche page de registre
+$routes->post('/register/store','RegisterController::store');
 $routes->post('/login', 'LoginController::login'); // Vérifie les identifiants
 $routes->get('/recuperer_page', 'MotDePasseOublieController::index'); // Affiche la page de récupération
 $routes->post('/recuperer', 'MotDePasseOublieController::envoyerEmail'); // Envoie l'e-mail

@@ -27,31 +27,51 @@
                             <h1>Register</h1>
 
 
-                            <form action="login.html">
+                            <form action="<?= site_url('/register/store') ?>" method="post">
+                                <?= csrf_field() ?>
+
+                             
+                                <?php if (session('errors')): ?>
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            <?php foreach (session('errors') as $error): ?>
+                                                <li><?= esc($error) ?></li>
+                                            <?php endforeach; ?>
+                                        </ul>
+                                    </div>
+                                <?php endif; ?>
+
                                 <div class="form-group">
-                                    <label class="form-control-label">Name</label>
-                                    <input class="form-control" type="text">
+                                    <label class="form-control-label">Nom</label>
+                                    <input class="form-control" type="text" name="name" value="<?= old('name') ?>"
+                                        required>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="form-control-label">Email </label>
-                                    <input class="form-control" type="text">
+                                    <label class="form-control-label">Email</label>
+                                    <input class="form-control" type="email" name="email" value="<?= old('email') ?>"
+                                        required>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="form-control-label">Password</label>
-                                    <input class="form-control" type="text">
+                                    <label class="form-control-label">Mot de passe</label>
+                                    <input class="form-control" type="password" name="password" required>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="form-control-label">Confirm Password</label>
-                                    <input class="form-control" type="text">
+                                    <label class="form-control-label">Confirmer le mot de passe</label>
+                                    <input class="form-control" type="password" name="confirm_password" required>
                                 </div>
+
                                 <div class="form-group mb-0">
-                                    <button class="btn btn-lg btn-block btn-primary" type="submit">s'inscrire</button>
+                                    <button class="btn btn-lg btn-block btn-primary" type="submit">S'inscrire</button>
                                 </div>
                             </form>
 
 
 
-                            <div class="text-center dont-have">Already have an account? <a href="<?= site_url('/') ?>">Login</a>
+                            <div class="text-center dont-have">Already have an account? <a
+                                    href="<?= site_url('/') ?>">Login</a>
                             </div>
                         </div>
                     </div>

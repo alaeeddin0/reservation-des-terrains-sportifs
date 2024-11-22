@@ -8,11 +8,18 @@ class UtilisateurModel extends Model
 {
     protected $table = 'utilisateur';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['nom', 'email', 'password', 'role'];
+    protected $allowedFields = [
+        'nom',
+        'email',
+        'password',
+        'role',
+        'reset_token',
+        'reset_expires'
+    ];
     protected $validationRules = [
-        'email'    => 'required|valid_email|is_unique[utilisateur.email]',
+        'email' => 'required|valid_email|is_unique[utilisateur.email]',
         'password' => 'required|min_length[6]',
-        'role'     => 'required|in_list[admin,joueur]'
+        'role' => 'required|in_list[admin,joueur]'
     ];
     public function joueurs()
     {

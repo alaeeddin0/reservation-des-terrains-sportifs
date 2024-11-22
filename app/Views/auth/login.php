@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Terrains sportifs </title>
 
-    <link rel="shortcut icon" href="assets/img/profiles/avatar-14.jpg">
+    <link rel="shortcut icon" href="/assets/img/profiles/avatar-14.jpg">
 
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 
 <body>
@@ -57,13 +57,13 @@
                                             </div>
                                         </div>
                                         <div class="col-6 text-right">
-                                            <a class="forgot-link" href="forgot-password.html">mot de passe oublié ?</a>
+                                            <a class="forgot-link" href="<?= site_url('recuperer_page') ?>">mot de passe oublié ?</a>
                                         </div>
                                     </div>
                                 </div>
                                 <button class="btn btn-lg btn-block btn-primary" type="submit">se connecter</button>
                                 <div class="text-center dont-have">tu n'as pas de compte? <a
-                                        href="register.html">s'inscrire</a></div>
+                                        href="<?= site_url('register') ?>">s'inscrire</a></div>
                             </form>
                         </div>
                     </div>
@@ -73,14 +73,14 @@
     </div>
 
 
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="/assets/js/jquery-3.5.1.min.js"></script>
 
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/popper.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
 
-    <script src="assets/js/feather.min.js"></script>
+    <script src="/assets/js/feather.min.js"></script>
 
-    <script src="assets/js/script.js"></script>
+    <script src="/assets/js/script.js"></script>
 </body>
 
 </html>

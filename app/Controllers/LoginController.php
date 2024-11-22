@@ -14,9 +14,6 @@ class LoginController extends BaseController
     {
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
-        log_message('debug', 'Email reçu : ' . $email);
-
-        // Charger le modèle utilisateur
         $utilisateurModel = new UtilisateurModel();
 
         // Vérifie si l'utilisateur existe avec cet email
@@ -35,11 +32,9 @@ class LoginController extends BaseController
                 ]);
 
                 // Redirige en fonction du rôle
-                if ($user['role'] === 'admin') {
-                    return redirect()->to('/admin/AdminHome');
-                } elseif ($user['role'] === 'joueur') {
-                    return redirect()->to('/joueur/JoueurHome');
-                }
+                return $user['role'] === 'admin' 
+                    ? redirect()->to('/admin/AdminHome') 
+                    : redirect()->to('/joueur/JoueurHome');
             } else {
                 // Mot de passe incorrect
                 return redirect()->back()->with('error', 'Mot de passe incorrect.');

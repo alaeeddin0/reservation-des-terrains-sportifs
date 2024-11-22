@@ -8,6 +8,6 @@ class AdministrateurModel extends Model
 {
     protected $table = 'administrateur';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['id'];
+    protected $allowedFields = ['id','nom','email'];
  
 }

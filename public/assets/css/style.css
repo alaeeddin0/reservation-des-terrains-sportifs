@@ -2865,6 +2865,7 @@ html.menu-opened body {
 
 .sidebar-menu ul.logout {
 	padding: 15px;
+	padding-top: 130px;
 }
 .sidebar-menu .menu-arrow:before {
 	content: "\f105";

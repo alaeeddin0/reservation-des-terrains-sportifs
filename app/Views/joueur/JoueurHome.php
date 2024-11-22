@@ -5,8 +5,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <title>Terrains sportifs </title>
-
-    <link rel="shortcut icon" href="/assets/img/profiles/avatar-14.jpg">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/plugins/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="/assets/plugins/fontawesome/css/all.min.css">
@@ -52,17 +50,17 @@
                 <li class="nav-item dropdown has-arrow main-drop">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <span class="user-img">
-                            <img src="/assets/img/profiles/avatar-14.jpg" alt="">
+                            <img src="/assets/img/profiles/blank-profile-picture.webp" alt="">
                             <span class="status online"></span>
                         </span>
-                        <span>joueur</span>
+                        <span> <?= esc($nom) ?></h4></span>
                     </a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i>
                             Profile</a>
                         <a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i>
                             Settings</a>
-                        <a class="dropdown-item" href="login.html"><i data-feather="log-out" class="mr-1"></i>
+                        <a class="dropdown-item" href="<?= site_url('logout') ?>"><i data-feather="log-out" class="mr-1"></i>
                             Logout</a>
                     </div>
                 </li>
@@ -96,22 +94,23 @@
                                 </div>
                             </div>
                         </div>
+
                         <ul>
                             <li class="active">
                                 <a href="index.html"><img src="/assets/img/home.svg" alt="sidebar_img">
-                                    <span>Dashboard</span></a>
+                                    <span>Accueil</span></a>
                             </li>
                             <li>
                                 <a href="employee.html"><img src="/assets/img/employee.svg" alt="sidebar_img"><span>
-                                        Employees</span></a>
+                                        Employées</span></a>
                             </li>
                             <li>
                                 <a href="calendar.html"><img src="/assets/img/calendar.svg" alt="sidebar_img">
-                                    <span>Calendar</span></a>
+                                    <span>Calendrier</span></a>
                             </li>
                             <li>
                                 <a href="review.html"><img src="/assets/img/review.svg"
-                                        alt="sidebar_img"><span>Review</span></a>
+                                        alt="sidebar_img"><span>Avis</span></a>
                             </li>
                             <li>
                                 <a href="profile.html"><img src="/assets/img/profile.svg" alt="sidebar_img">
@@ -120,10 +119,11 @@
                         </ul>
                         <ul class="logout">
                             <li>
-                                <a href="profile.html"><img src="/assets/img/logout.svg" alt="sidebar_img"><span>Log
+                                <a href="<?= site_url('logout') ?>"><img src="/assets/img/logout.svg" alt="sidebar_img"><span>Log
                                         out</span></a>
                             </li>
                         </ul>
+
                     </div>
                 </div>
             </div>
@@ -131,16 +131,16 @@
         <div class="page-wrapper">
             <div class="content container-fluid">
                 <div class="page-name 	mb-4">
-                    <h4 class="m-0"><img src="/assets/img/profiles/avatar-14.jpg" class="mr-1" alt="profile" /> Welcome
-                        Joueur</h4>
-                    <label>Sun, 1 OCT 2024</label>
+                    <h4 class="m-0"><img src="/assets/img/profiles/blank-profile-picture.webp" class="mr-1" alt="profile" /> Bienvenue
+                    <?= esc($nom) ?></h4>
+                    <label><?= esc($dateActuelle) ?></label>
                 </div>
                 <div class="row mb-4">
                     <div class="col-xl-3 col-sm-6 col-12">
-                        <div class="card board1 fill1 ">
+                        <div class="card board1 fill1">
                             <div class="card-body">
                                 <div class="card_widget_header">
-                                    <label>Votre réservations</label>
+                                    <label> réservations</label>
                                     <h4>700</h4>
                                 </div>
                                 <div class="card_widget_img">
@@ -175,11 +175,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
                 </div>
             </div>
         </div>

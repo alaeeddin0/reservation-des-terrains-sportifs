@@ -15,4 +15,7 @@ $routes->post('/recuperer', 'MotDePasseOublieController::envoyerEmail'); // Envo
 $routes->get('/mot_de_passe_oublie/reset/(:segment)', 'MotDePasseOublieController::reset/$1'); // Page de réinitialisation avec le token
 $routes->post('/mettre_a_jour_mot_de_passe', 'MotDePasseOublieController::mettreAJourMotDePasse'); // Soumission du nouveau mot de passe
 $routes->get('/logout', 'LoginController::logout');// Déconnecte l'utilisateur
-
+$routes->get('/Reservation', 'ReservationController::index');//affiche page Reservation
+$routes->get('/Avis', 'AvisController::index');//affiche page Avis
+$routes->get('/Terrains', 'TerrainsController::index');//affiche page Terrains
+$routes->get('/Profile', 'ProfileController::index');//affiche page Profile

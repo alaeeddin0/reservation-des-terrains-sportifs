@@ -106,7 +106,7 @@
                                 Réservations</span></a>
                             </li>
                             <li>
-                                <a href="calendar.html"><img src="/assets/img/calendar.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Terrains') ?>"><img src="/assets/img/calendar.svg" alt="sidebar_img">
                                     <span>Terrains</span></a>
                             </li>
                             <li>
@@ -114,7 +114,7 @@
                                         alt="sidebar_img"><span>Avis</span></a>
                             </li>
                             <li>
-                                <a href="profile.html"><img src="/assets/img/profile.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Profile') ?>"><img src="/assets/img/profile.svg" alt="sidebar_img">
                                     <span>Profile</span></a>
                             </li>
                         </ul>
@@ -146,57 +146,10 @@
                                 <li class="breadcrumb-item"><a href="index.html"><img src="/assets/img/dash.png"
                                             class="mr-2">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active"> Accueil</li>
+                                <li class="breadcrumb-item active"> Terrains</li>
                             </ul>
-                            <h3>Accueil</h3>
+                            <h3>Terrains</h3>
                         </div>
-                    </div>
-                </div>
-                <div class="row mb-4">
-                    <div class="col-xl-3 col-sm-6 col-12 mt-5">
-                        <a href="/reservations" class="text-decoration-none">
-                            <div class="card board1 fill1">
-                                <div class="card-body">
-                                    <div class="card_widget_header">
-                                        <label>Réservations</label>
-                                        <h4>700</h4>
-                                    </div>
-                                    <div class="card_widget_img">
-                                        <img src="/assets/img/dash1.png" alt="card-img" />
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 mt-5">
-                        <a href="/terrains" class="text-decoration-none">
-                            <div class="card board1 fill2">
-                                <div class="card-body">
-                                    <div class="card_widget_header">
-                                        <label>Terrains</label>
-                                        <h4>30</h4>
-                                    </div>
-                                    <div class="card_widget_img">
-                                        <img src="/assets/img/dash2.png" alt="card-img" />
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xl-3 col-sm-6 col-12 mt-5">
-                        <a href="/avis" class="text-decoration-none">
-                            <div class="card board1 fill3">
-                                <div class="card-body">
-                                    <div class="card_widget_header">
-                                        <label>Avis</label>
-                                        <h4>9</h4>
-                                    </div>
-                                    <div class="card_widget_img">
-                                        <img src="/assets/img/dash3.png" alt="card-img" />
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>

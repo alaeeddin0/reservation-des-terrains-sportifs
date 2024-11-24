@@ -106,7 +106,7 @@
                                 Réservations</span></a>
                             </li>
                             <li>
-                                <a href="calendar.html"><img src="/assets/img/calendar.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Terrains') ?>"><img src="/assets/img/calendar.svg" alt="sidebar_img">
                                     <span>Terrains</span></a>
                             </li>
                             <li>
@@ -114,7 +114,7 @@
                                         alt="sidebar_img"><span>Avis</span></a>
                             </li>
                             <li>
-                                <a href="profile.html"><img src="/assets/img/profile.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Profile') ?>"><img src="/assets/img/profile.svg" alt="sidebar_img">
                                     <span>Profile</span></a>
                             </li>
                         </ul>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="row mb-4">
                     <div class="col-xl-3 col-sm-6 col-12 mt-5">
-                        <a href="/reservations" class="text-decoration-none">
+                        <a href="<?= site_url('/Reservation') ?>" class="text-decoration-none">
                             <div class="card board1 fill1">
                                 <div class="card-body">
                                     <div class="card_widget_header">
@@ -169,7 +169,7 @@
                         </a>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 mt-5">
-                        <a href="/terrains" class="text-decoration-none">
+                        <a href="<?= site_url('/Terrains') ?>" class="text-decoration-none">
                             <div class="card board1 fill2">
                                 <div class="card-body">
                                     <div class="card_widget_header">
@@ -184,7 +184,7 @@
                         </a>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 mt-5">
-                        <a href="/avis" class="text-decoration-none">
+                        <a href="<?= site_url('/Avis') ?>" class="text-decoration-none">
                             <div class="card board1 fill3">
                                 <div class="card-body">
                                     <div class="card_widget_header">

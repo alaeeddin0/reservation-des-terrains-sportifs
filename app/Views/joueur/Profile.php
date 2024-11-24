@@ -98,15 +98,18 @@
 
                         <ul>
                             <li class="active">
-                                <a href="<?= site_url('/joueur/JoueurHome') ?>"><img src="/assets/img/home.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/joueur/JoueurHome') ?>"><img src="/assets/img/home.svg"
+                                        alt="sidebar_img">
                                     <span>Accueil</span></a>
                             </li>
                             <li>
-                                <a href="<?= site_url('/Reservation') ?>"><img src="/assets/img/employee.svg" alt="sidebar_img"><span>
-                                Réservations</span></a>
+                                <a href="<?= site_url('/Reservation') ?>"><img src="/assets/img/employee.svg"
+                                        alt="sidebar_img"><span>
+                                        Réservations</span></a>
                             </li>
                             <li>
-                                <a href="<?= site_url('/Terrains') ?>"><img src="/assets/img/calendar.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Terrains') ?>"><img src="/assets/img/calendar.svg"
+                                        alt="sidebar_img">
                                     <span>Terrains</span></a>
                             </li>
                             <li>
@@ -114,7 +117,8 @@
                                         alt="sidebar_img"><span>Avis</span></a>
                             </li>
                             <li>
-                                <a href="<?= site_url('/Profile') ?>"><img src="/assets/img/profile.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Profile') ?>"><img src="/assets/img/profile.svg"
+                                        alt="sidebar_img">
                                     <span>Profile</span></a>
                             </li>
                         </ul>
@@ -152,6 +156,42 @@
                         </div>
                     </div>
                 </div>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h4 class="card-title text-center">Informations de l'utilisateur</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+
+                            <div class="col-md-6 mb-3">
+                                <h5 class="font-weight-bold d-inline">Nom :</h5>
+                                <span class="ml-2"><?= esc($nom) ?></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <h5 class="font-weight-bold d-inline">Email :</h5>
+                                <span class="ml-2"><?= esc($email) ?></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <h5 class="font-weight-bold d-inline">Rôle :</h5>
+                                <span class="ml-2"><?= esc($role) ?></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <h5 class="font-weight-bold d-inline">Nombre de réservations :</h5>
+                                <span class="ml-2">23456</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-md-12 text-center">
+                                <a href="<?= site_url('logout') ?>" class="btn btn-danger">
+                                    <i class="fas fa-sign-out-alt"></i> Déconnexion
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -168,4 +208,5 @@
     <script src="/assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
     <script src="/assets/js/script.js"></script>
 </body>
+
 </html>

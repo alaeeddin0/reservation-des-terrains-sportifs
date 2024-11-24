@@ -98,15 +98,18 @@
 
                         <ul>
                             <li class="active">
-                                <a href="<?= site_url('/joueur/JoueurHome') ?>"><img src="/assets/img/home.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/joueur/JoueurHome') ?>"><img src="/assets/img/home.svg"
+                                        alt="sidebar_img">
                                     <span>Accueil</span></a>
                             </li>
                             <li>
-                                <a href="<?= site_url('/Reservation') ?>"><img src="/assets/img/employee.svg" alt="sidebar_img"><span>
-                                Réservations</span></a>
+                                <a href="<?= site_url('/Reservation') ?>"><img src="/assets/img/employee.svg"
+                                        alt="sidebar_img"><span>
+                                        Réservations</span></a>
                             </li>
                             <li>
-                                <a href="<?= site_url('/Terrains') ?>"><img src="/assets/img/calendar.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Terrains') ?>"><img src="/assets/img/calendar.svg"
+                                        alt="sidebar_img">
                                     <span>Terrains</span></a>
                             </li>
                             <li>
@@ -114,7 +117,8 @@
                                         alt="sidebar_img"><span>Avis</span></a>
                             </li>
                             <li>
-                                <a href="<?= site_url('/Profile') ?>"><img src="/assets/img/profile.svg" alt="sidebar_img">
+                                <a href="<?= site_url('/Profile') ?>"><img src="/assets/img/profile.svg"
+                                        alt="sidebar_img">
                                     <span>Profile</span></a>
                             </li>
                         </ul>
@@ -168,4 +172,5 @@
     <script src="/assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
     <script src="/assets/js/script.js"></script>
 </body>
+
 </html>

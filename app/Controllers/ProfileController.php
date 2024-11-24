@@ -23,6 +23,8 @@ class ProfileController extends BaseController
 
         return view('joueur/Profile', [
             'nom' => $utilisateur['nom'],
+            'email' => $utilisateur['email'],
+            'role' => $utilisateur['role'],
             'dateActuelle' => date('D, d M Y'), // Format de la date actuelle
         ]);
     }

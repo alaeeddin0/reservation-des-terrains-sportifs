@@ -19,3 +19,7 @@ $routes->get('/Reservation', 'ReservationController::index');//affiche page Rese
 $routes->get('/Avis', 'AvisController::index');//affiche page Avis
 $routes->get('/Terrains', 'TerrainsController::index');//affiche page Terrains
 $routes->get('/Profile', 'ProfileController::index');//affiche page Profile
+$routes->post('/avis/store', 'AvisController::store');
+$routes->get('/avis/edit/(:num)', 'AvisController::edit/$1');
+$routes->post('/avis/update/(:num)', 'AvisController::update/$1');
+$routes->post('/avis/delete/(:num)', 'AvisController::delete/$1');

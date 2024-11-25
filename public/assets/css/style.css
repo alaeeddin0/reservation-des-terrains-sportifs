@@ -6039,6 +6039,7 @@ a.btn.btn-head:hover {
     box-shadow: 0 4px 10px 0 rgb(137 137 137 / 25%);
     font-size: 20px;
     border-radius: 10px;
+	margin-left: 1000px;
 }
 .create-formhead ul {
 	display: -webkit-box; 
@@ -6502,6 +6503,7 @@ label.logo-upload {
 		-webkit-transition: all 0.4s ease;
 		-moz-transition: all 0.4s ease;
 		transition: all 0.4s ease;
+		
 	}
 	.chat-window .chat-scroll {
 		max-height: calc(100vh - 255px);

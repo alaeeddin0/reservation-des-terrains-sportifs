@@ -13,7 +13,181 @@
 </head>
 
 <body>
+    <style>
+    #open-review-form {
+        font-size: 1rem;
+        padding: 10px 20px;
+        border-radius: 25px;
+        transition: all 0.3s ease-in-out;
+        margin-left: 900px;
+    }
 
+    #review-form input,
+    #review-form textarea,
+    #review-form select {
+        margin-bottom: 15px;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    #open-review-form:hover {
+        background-color: #0056b3;
+        color: #fff;
+        transform: scale(1.05);
+    }
+
+    .page-wrapper-custom {
+        margin-left: 240px;
+        padding-top: 70px;
+        position: relative;
+        transition: all 0.4s ease;
+    }
+
+    #review-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1050;
+    }
+
+    .review-modal {
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 600px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    #review-form .form-label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    #review-form .form-control,
+    #review-form .form-select {
+        border-radius: 5px;
+    }
+
+    #review-form button {
+        padding: 10px 20px;
+        border-radius: 25px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    #review-form button:hover {
+        transform: scale(1.05);
+    }
+
+    .review-section {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #review-form .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    table {
+        width: 80%;
+        margin-top: 5px;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: #fff;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-left: 15%;
+    }
+
+    td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+        color: #333;
+        vertical-align: middle;
+    }
+
+    th {
+        background-color: #007bff;
+        color: #fff;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 12px 15px;
+        border: none;
+    }
+
+
+    h1,
+    .header-title {
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        text-align: ;
+
+    }
+
+    tbody tr:hover {
+        background-color: #f4f4f4;
+        cursor: pointer;
+    }
+
+
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+
+    td:first-child,
+    th:first-child {
+        text-align: center;
+
+    }
+
+    td:nth-child(4),
+    th:nth-child(4) {
+        text-align: center;
+
+    }
+
+    .btn-primary,
+    .btn-danger {
+        border-radius: 25px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .btn-primary:hover,
+    .btn-danger:hover {
+        background-color: #0056b3;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        color: white;
+        transform: scale(1.05);
+    }
+    </style>
     <div class="main-wrapper">
 
         <div class="header">
@@ -39,11 +213,6 @@
                     <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-
-
-            <a class="mobile_btn" id="mobile_btn">
-                <i class="fas fa-bars"></i>
-            </a>
 
 
             <ul class="nav user-menu">
@@ -134,30 +303,127 @@
                 </div>
             </div>
         </div>
-        <div class="page-wrapper">
-            <div class="content container-fluid">
-                <div class="page-name 	mb-4">
-                    <h4 class="m-0"><img src="/assets/img/profiles/blank-profile-picture.webp" class="mr-1"
-                            alt="profile" /> Bienvenue
-                        <?= esc($nom) ?>
-                    </h4>
-                    <label><?= esc($dateActuelle) ?></label>
-                </div>
-                <div class="row">
-                    <div class="col-xl-12 col-sm-12 col-12  mb-4">
-                        <div class="breadcrumb-path">
-                            <ul class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="index.html"><img src="/assets/img/dash.png"
-                                            class="mr-2">Home</a>
-                                </li>
-                                <li class="breadcrumb-item active"> Avis</li>
-                            </ul>
-                            <h3>Avis</h3>
+        <div class="container">
+            <div class="page-wrapper-custom">
+                <div class="content container-fluid">
+                    <div class="page-name mb-4">
+                        <h4 class="m-0"><img src="/assets/img/profiles/blank-profile-picture.webp" class="mr-1"
+                                alt="profile" /> Bienvenue
+                            <?= esc($nom) ?>
+                        </h4>
+                        <label><?= esc($dateActuelle) ?></label>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-12 col-sm-12 col-12 mb-4">
+                            <div class="breadcrumb-path">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html"><img src="/assets/img/dash.png"
+                                                class="mr-2">Home</a></li>
+                                    <li class="breadcrumb-item active"> Avis</li>
+                                </ul>
+                                <h3>Avis</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="review-section">
+                <button id="open-review-form" class="btn btn-primary btn-lg btn-rounded shadow-sm">
+                    <i class="fas fa-pen"></i> Laisser un avis
+                </button>
+
+                <div id="review-overlay" class="review-overlay">
+                    <div class="review-modal">
+                        <h5 class="text-center mb-3">Votre Avis</h5>
+                        <form action="<?= site_url('/avis/store') ?>" method="post" id="review-form">
+                            <?= csrf_field() ?>
+                            <div class="form-group mb-3">
+                                <label for="titre" class="form-label">Titre</label>
+                                <input type="text" id="titre" name="titre" class="form-control"
+                                    placeholder="Titre de votre avis" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="contenu" class="form-label">Commentaire</label>
+                                <textarea id="contenu" name="contenu" class="form-control" rows="4"
+                                    placeholder="Écrivez votre commentaire ici..." required></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="note" class="form-label">Note</label>
+                                <select id="note" name="note" class="form-select" required>
+                                    <option value="" disabled selected>Choisissez une note</option>
+                                    <option value="1">1 étoile</option>
+                                    <option value="2">2 étoiles</option>
+                                    <option value="3">3 étoiles</option>
+                                    <option value="4">4 étoiles</option>
+                                    <option value="5">5 étoiles</option>
+                                </select>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <button type="submit" class="btn btn-success btn-rounded shadow-sm">Envoyer</button>
+                                <button type="button" id="cancel-review-form"
+                                    class="btn btn-secondary btn-rounded shadow-sm">Annuler</button>
+                            </div>
+                        </form>
+                        <?php if (session()->getFlashdata('errors')): ?>
+                        <div class="alert alert-danger">
+                            <?= implode('<br>', session()->getFlashdata('errors')); ?>
+                        </div>
+                        <?php endif; ?>
+
+                        <?php if (session()->getFlashdata('success')): ?>
+                        <div class="alert alert-success">
+                            <?= session()->getFlashdata('success'); ?>
+                        </div>
+                        <?php endif; ?>
+
+                    </div>
+                </div>
+            </div>
+            <?php if (isset($avis) && count($avis) > 0): ?>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Titre</th>
+                        <th>Contenu</th>
+                        <th>Note</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($avis as $index => $avisItem): ?>
+                    <tr>
+                        <td class="text-center"><?= $index + 1 ?></td>
+                        <td><?= esc($avisItem['titre']) ?></td>
+                        <td><?= esc($avisItem['contenu']) ?></td>
+                        <td class="text-center"><?= esc($avisItem['note']) ?> / 5</td>
+                        <td><?= esc($avisItem['created_at']) ?></td>
+                        <td class="text-center">
+                            <a href="javascript:void(0)" class="btn btn-primary btn-sm"
+                                onclick="openEditForm(<?= $avisItem['id'] ?>, '<?= esc($avisItem['titre']) ?>', '<?= esc($avisItem['contenu']) ?>', <?= $avisItem['note'] ?>)">
+                                <i class="fas fa-edit"></i> Éditer
+                            </a>
+
+                            <form action="<?= site_url('/avis/delete/' . $avisItem['id']) ?>" method="post"
+                                style="display:inline;">
+                                <?= csrf_field() ?>
+                                <button type="submit" class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet avis ?')">
+                                    <i class="fas fa-trash"></i> Supprimer
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+
+            <?php else: ?>
+            <p>Aucun avis trouvé. Vous pouvez laisser votre premier avis !</p>
+            <?php endif; ?>
         </div>
+
     </div>
 
 
@@ -171,6 +437,30 @@
     <script src="/assets/plugins/fullcalendar/fullcalendar.min.js"></script>
     <script src="/assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
     <script src="/assets/js/script.js"></script>
+    <script>
+    document.getElementById('open-review-form').addEventListener('click', function() {
+        document.getElementById('review-overlay').style.display = 'flex';
+    });
+    document.getElementById('cancel-review-form').addEventListener('click', function() {
+        document.getElementById('review-overlay').style.display = 'none';
+    });
+    document.getElementById('review-overlay').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });
+
+    function openEditForm(id, titre, contenu, note) {
+        document.getElementById('titre').value = titre;
+        document.getElementById('contenu').value = contenu;
+        document.getElementById('note').value = note;
+        let form = document.getElementById('review-form');
+        form.action = "<?= site_url('/avis/update') ?>/" + id;
+        document.getElementById('review-overlay').style.display = 'flex';
+    }
+    </script>
+
+
 </body>
 
 </html>

@@ -9,7 +9,6 @@ class JoueurHomeController extends BaseController
 {
     public function index()
     {
-        // Supposons que les informations utilisateur sont stockées dans la session
         $session = session();
         $user = $session->get('user');
 
@@ -18,7 +17,6 @@ class JoueurHomeController extends BaseController
             return redirect()->to('/')->with('error', 'Veuillez vous connecter.');
         }
 
-        // Récupérez le nom du joueur depuis la base de données (si nécessaire)
         $utilisateurModel = new UtilisateurModel();
         $utilisateur = $utilisateurModel->find($user['id']);
 

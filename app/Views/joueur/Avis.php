@@ -14,179 +14,179 @@
 
 <body>
     <style>
-    #open-review-form {
-        font-size: 1rem;
-        padding: 10px 20px;
-        border-radius: 25px;
-        transition: all 0.3s ease-in-out;
-        margin-left: 900px;
-    }
-
-    #review-form input,
-    #review-form textarea,
-    #review-form select {
-        margin-bottom: 15px;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    #open-review-form:hover {
-        background-color: #0056b3;
-        color: #fff;
-        transform: scale(1.05);
-    }
-
-    .page-wrapper-custom {
-        margin-left: 240px;
-        padding-top: 70px;
-        position: relative;
-        transition: all 0.4s ease;
-    }
-
-    #review-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1050;
-    }
-
-    .review-modal {
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-        width: 100%;
-        max-width: 600px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        animation: fadeIn 0.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: scale(0.9);
+        #open-review-form {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+            margin-left: 900px;
         }
 
-        to {
-            opacity: 1;
-            transform: scale(1);
+        #review-form input,
+        #review-form textarea,
+        #review-form select {
+            margin-bottom: 15px;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 1rem;
         }
-    }
 
-    #review-form .form-label {
-        font-weight: bold;
-        color: #333;
-    }
+        #open-review-form:hover {
+            background-color: #0056b3;
+            color: #fff;
+            transform: scale(1.05);
+        }
 
-    #review-form .form-control,
-    #review-form .form-select {
-        border-radius: 5px;
-    }
+        .page-wrapper-custom {
+            margin-left: 240px;
+            padding-top: 70px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
 
-    #review-form button {
-        padding: 10px 20px;
-        border-radius: 25px;
-        transition: all 0.3s ease-in-out;
-    }
+        #review-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1050;
+        }
 
-    #review-form button:hover {
-        transform: scale(1.05);
-    }
+        .review-modal {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.5s ease-in-out;
+        }
 
-    .review-section {
-        text-align: center;
-        margin-top: 30px;
-    }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
 
-    #review-form .form-group {
-        margin-bottom: 1.5rem;
-    }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
 
-    table {
-        width: 80%;
-        margin-top: 5px;
-        border-collapse: collapse;
-        text-align: left;
-        background-color: #fff;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        overflow: hidden;
-        margin-left: 15%;
-    }
+        #review-form .form-label {
+            font-weight: bold;
+            color: #333;
+        }
 
-    td {
-        padding: 12px 15px;
-        border-bottom: 1px solid #ddd;
-        color: #333;
-        vertical-align: middle;
-    }
+        #review-form .form-control,
+        #review-form .form-select {
+            border-radius: 5px;
+        }
 
-    th {
-        background-color: #007bff;
-        color: #fff;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 12px 15px;
-        border: none;
-    }
+        #review-form button {
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        #review-form button:hover {
+            transform: scale(1.05);
+        }
+
+        .review-section {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        #review-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        table {
+            margin-top: 5px;
+            border-collapse: collapse;
+            text-align: left;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: 15%;
+            max-width: 200px;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+            vertical-align: middle;
+            text-align: left;
+
+        }
+
+        th {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 12px 15px;
+            border: none;
+        }
+        h1,
+        .header-title {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+
+        }
+
+        tbody tr:hover {
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
 
 
-    h1,
-    .header-title {
-        margin-bottom: 20px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
-        text-align: ;
-
-    }
-
-    tbody tr:hover {
-        background-color: #f4f4f4;
-        cursor: pointer;
-    }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
 
 
-    tbody tr:last-child td {
-        border-bottom: none;
-    }
+        td:first-child,
+        th:first-child {
+            text-align: center;
 
+        }
 
-    td:first-child,
-    th:first-child {
-        text-align: center;
+        td:nth-child(4),
+        th:nth-child(4) {
+            text-align: center;
 
-    }
+        }
 
-    td:nth-child(4),
-    th:nth-child(4) {
-        text-align: center;
+        .btn-primary,
+        .btn-danger {
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+        }
 
-    }
+        .btn-primary:hover,
+        .btn-danger:hover {
+            background-color: #0056b3;
+            color: white;
+            transform: scale(1.05);
+        }
 
-    .btn-primary,
-    .btn-danger {
-        border-radius: 25px;
-        transition: all 0.3s ease-in-out;
-    }
-
-    .btn-primary:hover,
-    .btn-danger:hover {
-        background-color: #0056b3;
-        color: white;
-        transform: scale(1.05);
-    }
-
-    .btn-danger:hover {
-        background-color: #c82333;
-        color: white;
-        transform: scale(1.05);
-    }
+        .btn-danger:hover {
+            background-color: #c82333;
+            color: white;
+            transform: scale(1.05);
+        }
     </style>
     <div class="main-wrapper">
 
@@ -203,18 +203,12 @@
                     </span>
                 </a>
             </div>
-
-
-
-
             <div class="top-nav-search">
                 <form>
                     <input type="text" class="form-control" placeholder="">
                     <button class="btn" type="submit"><i class="fas fa-search"></i></button>
                 </form>
             </div>
-
-
             <ul class="nav user-menu">
                 <li class="nav-item dropdown has-arrow main-drop">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -234,11 +228,8 @@
                             Logout</a>
                     </div>
                 </li>
-
             </ul>
         </div>
-
-
         <div class="sidebar" id="sidebar">
             <div class="sidebar-inner slimscroll">
                 <div class="sidebar-contents">
@@ -334,7 +325,7 @@
 
                 <div id="review-overlay" class="review-overlay">
                     <div class="review-modal">
-                        <h5 class="text-center mb-3">Votre Avis</h5>
+                        <h5 class="text-center mb-3">Votre Réservation</h5>
                         <form action="<?= site_url('/avis/store') ?>" method="post" id="review-form">
                             <?= csrf_field() ?>
                             <div class="form-group mb-3">
@@ -365,62 +356,62 @@
                             </div>
                         </form>
                         <?php if (session()->getFlashdata('errors')): ?>
-                        <div class="alert alert-danger">
-                            <?= implode('<br>', session()->getFlashdata('errors')); ?>
-                        </div>
+                            <div class="alert alert-danger">
+                                <?= implode('<br>', session()->getFlashdata('errors')); ?>
+                            </div>
                         <?php endif; ?>
 
                         <?php if (session()->getFlashdata('success')): ?>
-                        <div class="alert alert-success">
-                            <?= session()->getFlashdata('success'); ?>
-                        </div>
+                            <div class="alert alert-success">
+                                <?= session()->getFlashdata('success'); ?>
+                            </div>
                         <?php endif; ?>
 
                     </div>
                 </div>
             </div>
             <?php if (isset($avis) && count($avis) > 0): ?>
-            <table class="table table-striped table-bordered">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Titre</th>
-                        <th>Contenu</th>
-                        <th>Note</th>
-                        <th>Date</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($avis as $index => $avisItem): ?>
-                    <tr>
-                        <td class="text-center"><?= $index + 1 ?></td>
-                        <td><?= esc($avisItem['titre']) ?></td>
-                        <td><?= esc($avisItem['contenu']) ?></td>
-                        <td class="text-center"><?= esc($avisItem['note']) ?> / 5</td>
-                        <td><?= esc($avisItem['created_at']) ?></td>
-                        <td class="text-center">
-                            <a href="javascript:void(0)" class="btn btn-primary btn-sm"
-                                onclick="openEditForm(<?= $avisItem['id'] ?>, '<?= esc($avisItem['titre']) ?>', '<?= esc($avisItem['contenu']) ?>', <?= $avisItem['note'] ?>)">
-                                <i class="fas fa-edit"></i> Éditer
-                            </a>
+                <table class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Titre</th>
+                            <th>Contenu</th>
+                            <th>Note</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($avis as $index => $avisItem): ?>
+                            <tr>
+                                <td class="text-center"><?= $index + 1 ?></td>
+                                <td><?= esc($avisItem['titre']) ?></td>
+                                <td><?= esc($avisItem['contenu']) ?></td>
+                                <td class="text-center"><?= esc($avisItem['note']) ?> / 5</td>
+                                <td><?= esc($avisItem['created_at']) ?></td>
+                                <td class="text-center">
+                                    <a href="javascript:void(0)" class="btn btn-primary btn-sm"
+                                        onclick="openEditForm(<?= $avisItem['id'] ?>, '<?= esc($avisItem['titre']) ?>', '<?= esc($avisItem['contenu']) ?>', <?= $avisItem['note'] ?>)">
+                                        <i class="fas fa-edit"></i> Éditer
+                                    </a>
 
-                            <form action="<?= site_url('/avis/delete/' . $avisItem['id']) ?>" method="post"
-                                style="display:inline;">
-                                <?= csrf_field() ?>
-                                <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet avis ?')">
-                                    <i class="fas fa-trash"></i> Supprimer
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
+                                    <form action="<?= site_url('/avis/delete/' . $avisItem['id']) ?>" method="post"
+                                        style="display:inline;">
+                                        <?= csrf_field() ?>
+                                        <button type="submit" class="btn btn-danger btn-sm"
+                                            onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet avis ?')">
+                                            <i class="fas fa-trash"></i> Supprimer
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
 
             <?php else: ?>
-            <p>Aucun avis trouvé. Vous pouvez laisser votre premier avis !</p>
+                
             <?php endif; ?>
         </div>
 
@@ -438,26 +429,26 @@
     <script src="/assets/plugins/fullcalendar/jquery.fullcalendar.js"></script>
     <script src="/assets/js/script.js"></script>
     <script>
-    document.getElementById('open-review-form').addEventListener('click', function() {
-        document.getElementById('review-overlay').style.display = 'flex';
-    });
-    document.getElementById('cancel-review-form').addEventListener('click', function() {
-        document.getElementById('review-overlay').style.display = 'none';
-    });
-    document.getElementById('review-overlay').addEventListener('click', function(e) {
-        if (e.target === this) {
-            this.style.display = 'none';
-        }
-    });
+        document.getElementById('open-review-form').addEventListener('click', function () {
+            document.getElementById('review-overlay').style.display = 'flex';
+        });
+        document.getElementById('cancel-review-form').addEventListener('click', function () {
+            document.getElementById('review-overlay').style.display = 'none';
+        });
+        document.getElementById('review-overlay').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.style.display = 'none';
+            }
+        });
 
-    function openEditForm(id, titre, contenu, note) {
-        document.getElementById('titre').value = titre;
-        document.getElementById('contenu').value = contenu;
-        document.getElementById('note').value = note;
-        let form = document.getElementById('review-form');
-        form.action = "<?= site_url('/avis/update') ?>/" + id;
-        document.getElementById('review-overlay').style.display = 'flex';
-    }
+        function openEditForm(id, titre, contenu, note) {
+            document.getElementById('titre').value = titre;
+            document.getElementById('contenu').value = contenu;
+            document.getElementById('note').value = note;
+            let form = document.getElementById('review-form');
+            form.action = "<?= site_url('/avis/update') ?>/" + id;
+            document.getElementById('review-overlay').style.display = 'flex';
+        }
     </script>
 
 

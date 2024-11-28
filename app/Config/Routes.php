@@ -7,8 +7,8 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'LoginController::index');// Affiche le formulaire de login
 $routes->get('/joueur/JoueurHome', 'JoueurHomeController::index');//affiche la page d'acceuil de joueur
-$routes->get('/register','RegisterController::index');// affiche page de registre
-$routes->post('/register/store','RegisterController::store');
+$routes->get('/register', 'RegisterController::index');// affiche page de registre
+$routes->post('/register/store', 'RegisterController::store');
 $routes->post('/login', 'LoginController::login'); // Vérifie les identifiants
 $routes->get('/recuperer_page', 'MotDePasseOublieController::index'); // Affiche la page de récupération
 $routes->post('/recuperer', 'MotDePasseOublieController::envoyerEmail'); // Envoie l'e-mail
@@ -23,3 +23,10 @@ $routes->post('/avis/store', 'AvisController::store');
 $routes->get('/avis/edit/(:num)', 'AvisController::edit/$1');
 $routes->post('/avis/update/(:num)', 'AvisController::update/$1');
 $routes->post('/avis/delete/(:num)', 'AvisController::delete/$1');
+$routes->post('/Reservation/create', 'ReservationController::create');
+$routes->get('/reservation/edit/(:num)', 'ReservationController::edit/$1');
+$routes->post('/reservation/update/(:num)', 'ReservationController::update/$1');
+$routes->post('/reservation/delete/(:num)', 'ReservationController::delete/$1');
+$routes->post('/payment/charge', 'PaymentController::charge');
+$routes->get('/payment/success', 'PaymentController::success'); // C'est la redirection après paiement réussi
+

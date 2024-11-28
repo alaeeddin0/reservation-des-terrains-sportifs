@@ -121,8 +121,6 @@ class AvisController extends BaseController
         if (!$avis || $avis['joueur_id'] !== $user['id']) {
             return redirect()->to('/Avis')->with('error', 'Avis introuvable ou vous n\'êtes pas autorisé à le modifier.');
         }
-
-        // Validation des données
         $validation = \Config\Services::validation();
         $validation->setRules([
             'titre' => 'required|min_length[3]|max_length[255]',

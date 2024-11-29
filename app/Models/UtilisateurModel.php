@@ -30,4 +30,19 @@ class UtilisateurModel extends Model
     {
         return $this->hasMany('App\Models\AdministrateurModel', 'id', 'id'); // Un utilisateur peut être un administrateur
     }
+    public function countAllUsers()
+     {
+         return $this->countAll();
+     }
+ 
+     public function countAllJoueur()
+     {
+         return $this->where('role', 'joueur')->countAll();
+     }
+ 
+     public function getUtilisateur()
+     {
+         return $this->where('role', 'joueur')->findAll();
+     }
+
 }

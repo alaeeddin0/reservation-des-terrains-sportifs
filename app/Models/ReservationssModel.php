@@ -4,18 +4,11 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class ReservationsModel extends Model
+class ReservationssModel extends Model
 {
     protected $table = 'reservations';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['joueur_id', 'terrain_id', 'creneau_id', 'statut','is_paid'];
-    protected $validationRules = [
-        'joueur_id' => 'required|integer',
-        'terrain_id' => 'required|integer',
-        'creneau_id' => 'required|integer',
-        'statut' => 'required|in_list[confirmée,en attente,annulée]',
-        'is_paid' => 'required|in_list[0,1]',
-    ];
+    
     public function getAllReservationsWithDetails()
     {
         return $this->db->table('reservations')
@@ -35,6 +28,8 @@ class ReservationsModel extends Model
             ->get()
             ->getResultArray();
     }
+    protected $allowedFields = ['statut']; 
+
     public function getReservationCounts()
     {
         $totalReservations = $this->countAll();
@@ -50,5 +45,7 @@ class ReservationsModel extends Model
            // 'annulée' => $cancelledReservations
         ];
     }
+
+   
+
 }
-?>

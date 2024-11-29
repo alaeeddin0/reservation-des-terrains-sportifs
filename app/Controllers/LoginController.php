@@ -29,7 +29,7 @@ class LoginController extends BaseController
                 ]);
 
                 return $user['role'] === 'admin' 
-                    ? redirect()->to('/admin/AdminHome') 
+                    ? redirect()->to('/Home')
                     : redirect()->to('/joueur/JoueurHome');
             } else {
                 return redirect()->back()->with('error', 'Mot de passe incorrect.');

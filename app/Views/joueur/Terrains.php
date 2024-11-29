@@ -170,6 +170,7 @@
             text-align: center;
 
         }
+
         .btn-style {
             background-color: #007BFF;
 
@@ -219,19 +220,6 @@
                     </span>
                 </a>
             </div>
-            <div class="top-nav-search">
-                <form>
-                    <input type="text" class="form-control" placeholder="">
-                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-
-
-            <a class="mobile_btn" id="mobile_btn">
-                <i class="fas fa-bars"></i>
-            </a>
-
-
             <ul class="nav user-menu">
                 <li class="nav-item dropdown has-arrow main-drop">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -242,10 +230,9 @@
                         <span> <?= esc($nom) ?></h4></span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i>
+                        <a class="dropdown-item" href="<?= site_url('/Profile') ?>"><i data-feather="user"
+                                class="mr-1"></i>
                             Profile</a>
-                        <a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i>
-                            Settings</a>
                         <a class="dropdown-item" href="<?= site_url('logout') ?>"><i data-feather="log-out"
                                 class="mr-1"></i>
                             Logout</a>

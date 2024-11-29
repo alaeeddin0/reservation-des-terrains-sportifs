@@ -250,12 +250,8 @@
                     </span>
                 </a>
             </div>
-            <div class="top-nav-search">
-                <form>
-                    <input type="text" class="form-control" placeholder="">
-                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
+        
+
             <a class="mobile_btn" id="mobile_btn">
                 <i class="fas fa-bars"></i>
             </a>
@@ -269,10 +265,9 @@
                         <span> <?= esc($nom) ?></h4></span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i>
+                        <a class="dropdown-item" href="<?= site_url('/Profile') ?>"><i data-feather="user"
+                                class="mr-1"></i>
                             Profile</a>
-                        <a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i>
-                            Settings</a>
                         <a class="dropdown-item" href="<?= site_url('logout') ?>"><i data-feather="log-out"
                                 class="mr-1"></i>
                             Logout</a>
@@ -376,7 +371,6 @@
                 <div id="review-overlay" class="review-overlay">
                     <div class="review-modal">
                         <h5 class="text-center mb-3">Réservez votre terrain</h5>
-                        <!-- Formulaire de réservation -->
                         <form action="<?= site_url('/Reservation/create') ?>" method="post" id="review-form">
                             <?= csrf_field() ?>
                             <div class="form-group mb-3">
@@ -486,7 +480,7 @@
                                         onclick="openEditReservation(<?= $reservation['id'] ?>, <?= esc($reservation['terrain_id']) ?>, <?= esc($reservation['creneau_id']) ?>)">
                                         <i class="fas fa-edit"></i> Éditer
                                     </a>
-                                 
+
 
 
 

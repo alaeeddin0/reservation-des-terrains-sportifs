@@ -20,6 +20,7 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
+
         .card.board1:hover {
             transform: translateY(-10px);
             box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
@@ -42,23 +43,6 @@
                     </span>
                 </a>
             </div>
-
-
-
-
-            <div class="top-nav-search">
-                <form>
-                    <input type="text" class="form-control" placeholder="">
-                    <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
-
-
-            <a class="mobile_btn" id="mobile_btn">
-                <i class="fas fa-bars"></i>
-            </a>
-
-
             <ul class="nav user-menu">
                 <li class="nav-item dropdown has-arrow main-drop">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -69,10 +53,9 @@
                         <span> <?= esc($nom) ?></h4></span>
                     </a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.html"><i data-feather="user" class="mr-1"></i>
+                        <a class="dropdown-item" href="<?= site_url('/Profile') ?>"><i data-feather="user"
+                                class="mr-1"></i>
                             Profile</a>
-                        <a class="dropdown-item" href="settings.html"><i data-feather="settings" class="mr-1"></i>
-                            Settings</a>
                         <a class="dropdown-item" href="<?= site_url('logout') ?>"><i data-feather="log-out"
                                 class="mr-1"></i>
                             Logout</a>
@@ -176,43 +159,49 @@
                                 <div class="card-body">
                                     <div class="card_widget_header">
                                         <label>Réservations</label>
-                                        <h4>700</h4>
+                                        <h4><?= htmlspecialchars($reservations) ?></h4>
+
                                     </div>
                                     <div class="card_widget_img">
                                         <img src="/assets/img/dash1.png" alt="card-img" />
                                     </div>
                                 </div>
                             </div>
+
                         </a>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 mt-5">
                         <a href="<?= site_url('/Terrains') ?>" class="text-decoration-none">
+
                             <div class="card board1 fill2">
                                 <div class="card-body">
                                     <div class="card_widget_header">
                                         <label>Terrains</label>
-                                        <h4>30</h4>
+                                        <h4><?= htmlspecialchars($terrains) ?></h4>
                                     </div>
                                     <div class="card_widget_img">
                                         <img src="/assets/img/dash2.png" alt="card-img" />
                                     </div>
                                 </div>
                             </div>
+
                         </a>
                     </div>
                     <div class="col-xl-3 col-sm-6 col-12 mt-5">
                         <a href="<?= site_url('/Avis') ?>" class="text-decoration-none">
+
                             <div class="card board1 fill3">
                                 <div class="card-body">
                                     <div class="card_widget_header">
                                         <label>Avis</label>
-                                        <h4>9</h4>
+                                        <h4><?= htmlspecialchars($avis) ?></h4>
                                     </div>
                                     <div class="card_widget_img">
                                         <img src="/assets/img/dash3.png" alt="card-img" />
                                     </div>
                                 </div>
                             </div>
+
                         </a>
                     </div>
                 </div>

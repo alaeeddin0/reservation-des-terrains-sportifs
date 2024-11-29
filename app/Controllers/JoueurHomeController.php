@@ -4,6 +4,9 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UtilisateurModel;
+use App\Models\TerrainsModel;
+use App\Models\ReservationsModel;
+use App\Models\CommentaireModel;
 
 class JoueurHomeController extends BaseController
 {
@@ -22,10 +25,19 @@ class JoueurHomeController extends BaseController
         if (!$utilisateur) {
             return redirect()->to('/')->with('error', 'Utilisateur introuvable.');
         }
+        $terrainsModel = new TerrainsModel();
+        $reservationsModel = new ReservationsModel();
+        $avisModel = new CommentaireModel();
+        $terrains = $terrainsModel->countAllResults();
+        $reservations = $reservationsModel->countAllResults();
+        $avis = $avisModel->countAllResults();
 
         return view('joueur/JoueurHome', [
             'nom' => $utilisateur['nom'],
-            'dateActuelle' => date('D, d M Y'), 
+            'dateActuelle' => date('D, d M Y'),
+            'terrains' => $terrains,
+            'reservations' => $reservations,
+            'avis' => $avis,
         ]);
     }
 }

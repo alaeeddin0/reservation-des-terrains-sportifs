@@ -39,6 +39,7 @@ class ReservationController extends BaseController
             'terrains' => $terrains,
             'creneaux' => $creneaux,
             'creneauxDisponibles' =>$creneauxDisponibles,
+            'session'=>$session,
         ]);
     }
 

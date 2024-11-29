@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UtilisateurModel;
+use App\Models\TerrainsModel;
+
 
 class TerrainsController extends BaseController
 {
@@ -20,10 +22,14 @@ class TerrainsController extends BaseController
         if (!$utilisateur) {
             return redirect()->to('/')->with('error', 'Utilisateur introuvable.');
         }
+        $terrainModel = new TerrainsModel();
+        $terrains = $terrainModel->findAll();
+
 
         return view('joueur/Terrains', [
             'nom' => $utilisateur['nom'],
             'dateActuelle' => date('D, d M Y'), // Format de la date actuelle
+            'terrains'=>$terrains,
         ]);
     }
 }

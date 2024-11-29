@@ -27,6 +27,5 @@ $routes->post('/Reservation/create', 'ReservationController::create');
 $routes->get('/reservation/edit/(:num)', 'ReservationController::edit/$1');
 $routes->post('/reservation/update/(:num)', 'ReservationController::update/$1');
 $routes->post('/reservation/delete/(:num)', 'ReservationController::delete/$1');
-$routes->post('/payment/charge', 'PaymentController::charge');
-$routes->get('/payment/success', 'PaymentController::success'); // C'est la redirection après paiement réussi
+
 

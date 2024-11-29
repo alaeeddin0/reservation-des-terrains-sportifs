@@ -486,18 +486,8 @@
                                         onclick="openEditReservation(<?= $reservation['id'] ?>, <?= esc($reservation['terrain_id']) ?>, <?= esc($reservation['creneau_id']) ?>)">
                                         <i class="fas fa-edit"></i> Éditer
                                     </a>
-                                    <form action="<?= site_url('/payment/charge') ?>" method="post" style="display:inline;">
-                                        <?= csrf_field() ?>
-                                        <input type="hidden" name="reservation_id" value="<?= esc($reservation['id']) ?>" />
-                                        <?php foreach ($terrains as $terrain): ?>
-                                            <?php if ($terrain['id'] == $reservation['terrain_id']): ?>
-                                                <input type="hidden" name="prix" value="<?= esc($terrain['prix']) ?>" />
-                                            <?php endif; ?>
-                                        <?php endforeach; ?>
-                                        <button type="submit" class="btn btn-success btn-sm">
-                                            <i class="fas fa-credit-card"></i> Payer
-                                        </button>
-                                    </form>
+                                 
+
 
 
                                     <form action="<?= site_url('/reservation/delete/' . $reservation['id']) ?>" method="post"
@@ -544,6 +534,7 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <button type="submit" class="btn btn-primary">Modifier</button>
+
                             <button type="button" id="cancel-edit-reservation"
                                 class="btn btn-secondary btn-rounded shadow-sm">Annuler</button>
                         </div>

@@ -25,7 +25,7 @@ class ProfileController extends BaseController
             'nom' => $utilisateur['nom'],
             'email' => $utilisateur['email'],
             'role' => $utilisateur['role'],
-            'dateActuelle' => date('D, d M Y'), // Format de la date actuelle
+            'dateActuelle' => date('D, d M Y'), 
         ]);
     }
 }

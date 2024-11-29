@@ -26,7 +26,7 @@ class AvisController extends BaseController
 
         return view('joueur/Avis', [
             'nom' => $utilisateur['nom'],
-            'dateActuelle' => date('D, d M Y'), 
+            'dateActuelle' => date('D, d M Y'),
             'avis' => $avis,
         ]);
     }
@@ -42,7 +42,7 @@ class AvisController extends BaseController
         $validation->setRules([
             'titre' => 'required|min_length[3]|max_length[255]',
             'contenu' => 'required|min_length[5]',
-            'note' => 'required|integer|greater_than[0]|less_than[6]', 
+            'note' => 'required|integer|greater_than[0]|less_than[6]',
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {

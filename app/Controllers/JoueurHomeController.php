@@ -12,7 +12,6 @@ class JoueurHomeController extends BaseController
         $session = session();
         $user = $session->get('user');
 
-        // Vérifiez si l'utilisateur est connecté
         if (!$user) {
             return redirect()->to('/')->with('error', 'Veuillez vous connecter.');
         }
@@ -24,10 +23,9 @@ class JoueurHomeController extends BaseController
             return redirect()->to('/')->with('error', 'Utilisateur introuvable.');
         }
 
-        // Passez les données à la vue
         return view('joueur/JoueurHome', [
             'nom' => $utilisateur['nom'],
-            'dateActuelle' => date('D, d M Y'), // Format de la date actuelle
+            'dateActuelle' => date('D, d M Y'), 
         ]);
     }
 }

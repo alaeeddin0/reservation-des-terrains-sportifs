@@ -1,0 +1,42 @@
+# Bloquer l'accès direct au dossier
+<IfModule authz_core_module>
+    Require all denied
+</IfModule>
+<IfModule !authz_core_module>
+    Deny from all
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Activation de la réécriture d'URL
+# ----------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+
+    # Si CodeIgniter est installé dans un sous-dossier, ajoute RewriteBase
+    RewriteBase /RV_project/
+
+    # Si l'URL contient un slash à la fin, redirige-le sans le slash
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Si l'URL contient "www", redirige vers la version sans "www"
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ http://%1%{REQUEST_URI} [R=301,L]
+
+    # Si ce n'est pas un fichier ou un dossier, envoie la requête à index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^([\s\S]*)$ index.php/$1 [L,NC,QSA]
+
+    # Assure que l'en-tête Authorization est transmis
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    # Si mod_rewrite n'est pas activé, toutes les erreurs 404 sont envoyées à index.php
+    ErrorDocument 404 index.php
+</IfModule>

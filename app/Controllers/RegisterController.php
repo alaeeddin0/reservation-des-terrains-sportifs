@@ -41,7 +41,7 @@ class RegisterController extends BaseController
             'id' => $utilisateurId,  
             'nom' => $this->request->getPost('name'), 
             'email' => $this->request->getPost('email'),
-            'historique_reservations' => '',  
+            'historique_reservations' => [],  
         ];
         
         $joueurModel->insert($joueurData);

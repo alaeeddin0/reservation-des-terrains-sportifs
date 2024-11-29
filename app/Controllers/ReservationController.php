@@ -6,6 +6,7 @@ use App\Models\UtilisateurModel;
 use App\Models\ReservationsModel;
 use App\Models\TerrainsModel;
 use App\Models\CreneauModel;
+use App\Models\JoueurModel;
 
 class ReservationController extends BaseController
 {
@@ -38,14 +39,13 @@ class ReservationController extends BaseController
             'reservations' => $reservations,
             'terrains' => $terrains,
             'creneaux' => $creneaux,
-            'creneauxDisponibles' =>$creneauxDisponibles,
-            'session'=>$session,
+            'creneauxDisponibles' => $creneauxDisponibles,
+            'session' => $session,
         ]);
     }
 
     public function create()
     {
-
         $session = session();
         $user = $session->get('user');
         if (!$user) {
@@ -55,6 +55,7 @@ class ReservationController extends BaseController
         $terrainModel = new TerrainsModel();
         $reservationModel = new ReservationsModel();
         $creneauModel = new CreneauModel();
+        $joueurModel = new JoueurModel();
 
         $validation = \Config\Services::validation();
         if (
@@ -89,17 +90,28 @@ class ReservationController extends BaseController
                 'terrain_id' => $terrain['id'],
                 'creneau_id' => $creneau['id'],
                 'statut' => 'en attente',
-                'is_paid' =>'0',
+                'is_paid' => '0',
                 'prix' => $terrain['prix'],
-
             ]);
             $creneauModel->update($creneau['id'], ['disponible' => 0]);
+
+
+            $historique_reservations = $user['historique_reservations'] ?? [];
+
+
+            $historique_reservations[] = $reservationModel->getInsertID();
+
+
+            $joueurModel->update($user['id'], [
+                'historique_reservations' => $historique_reservations
+            ]);
 
             return redirect()->to('/Reservation')->with('success', 'Réservation créée avec succès !');
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'Erreur lors de la réservation : ' . $e->getMessage());
         }
     }
+
 
     public function delete($id)
     {

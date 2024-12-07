@@ -21,16 +21,7 @@ class UtilisateurModel extends Model
         'password' => 'required|min_length[6]',
         'role' => 'required|in_list[admin,joueur]'
     ];
-    public function joueurs()
-    {
-        return $this->hasMany('App\Models\JoueurModel', 'id', 'id'); // Un utilisateur peut être un joueur
-    }
-
-    public function administrateurs()
-    {
-        return $this->hasMany('App\Models\AdministrateurModel', 'id', 'id'); // Un utilisateur peut être un administrateur
-    }
-    public function countAllUsers()
+        public function countAllUsers()
      {
          return $this->countAll();
      }

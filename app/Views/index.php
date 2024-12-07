@@ -84,7 +84,8 @@
 						</ul>
 						<ul class="logout">
 							<li>
-								<a href="/logout"><img src="assets/img/logout.svg" alt="sidebar_img"><span>Log
+								<a href="<?= site_url('logout') ?>"><img src="/assets/img/logout.svg"
+										alt="sidebar_img"><span>Log
 										out</span></a>
 							</li>
 						</ul>

@@ -15,6 +15,7 @@ class RegisterController extends BaseController
     {
         $validation = \Config\Services::validation();
 
+        // Set validation rules
         $validation->setRules([
             'name' => 'required|min_length[3]',
             'email' => 'required|valid_email|is_unique[utilisateur.email]',
@@ -22,10 +23,12 @@ class RegisterController extends BaseController
             'confirm_password' => 'required|matches[password]',
         ]);
 
+        // Validate the form inputs
         if (!$this->validate($validation->getRules())) {
             return redirect()->back()->withInput()->with('errors', $validation->getErrors());
         }
 
+        // Prepare user data
         $utilisateurModel = new UtilisateurModel();
         $userData = [
             'nom' => $this->request->getPost('name'),
@@ -36,15 +39,24 @@ class RegisterController extends BaseController
 
         $utilisateurId = $utilisateurModel->insert($userData);
 
+        if (!$utilisateurId) {
+            return redirect()->back()->with('error', 'Erreur lors de l\'inscription de l\'utilisateur.');
+        }
+
         $joueurModel = new JoueurModel();
         $joueurData = [
-            'id' => $utilisateurId,  
-            'nom' => $this->request->getPost('name'), 
+            'id' => $utilisateurId, 
+            'nom' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
-            'historique_reservations' => [],  
+            'historique_reservations' => [], 
         ];
-        
-        $joueurModel->insert($joueurData);
+
+        $joueurInsertSuccess = $joueurModel->insert($joueurData);
+
+        if (!$joueurInsertSuccess) {
+            $utilisateurModel->delete($utilisateurId);
+            return redirect()->back()->with('error', 'Erreur lors de l\'inscription du joueur.');
+        }
 
         return redirect()->to('/')->with('success', 'Inscription réussie. Vous pouvez maintenant vous connecter.');
     }

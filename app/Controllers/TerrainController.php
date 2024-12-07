@@ -40,7 +40,6 @@ class TerrainController extends BaseController
             'localisation' => $this->request->getPost('localisation'),
             'prix'         => $this->request->getPost('prix'),
             'type_sport'  => $this->request->getPost('type_sport'),
-             'disponibilites' => $this->request->getPost('disponibilites'),
         ];
 
         if ($model->insert($data)) {
@@ -68,14 +67,12 @@ class TerrainController extends BaseController
 {
     $dataToUpdate = [
         'prix' => $this->request->getPost('prix'),
-        'disponibilites' => $this->request->getPost('disponibilites'),
     ];
 
     $model = new TerrainModel();
 
     if ($this->validate([
         'prix' => 'required|numeric',
-        'disponibilites' => 'required|string',
     ])) {
         if ($model->update($id, $dataToUpdate)) {
 

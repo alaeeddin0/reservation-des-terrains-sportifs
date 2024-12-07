@@ -224,7 +224,7 @@
                 <li class="nav-item dropdown has-arrow main-drop">
                     <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                         <span class="user-img">
-                            <img src="/assets/img/profiles/blank-profile-picture.webp" alt="">
+                            <img src="/assets/img/blank-profile-picture.webp" alt="">
                             <span class="status online"></span>
                         </span>
                         <span> <?= esc($nom) ?></h4></span>
@@ -311,7 +311,7 @@
             <div class="page-wrapper-custom">
                 <div class="content container-fluid">
                     <div class="page-name 	mb-4">
-                        <h4 class="m-0"><img src="/assets/img/profiles/blank-profile-picture.webp" class="mr-1"
+                        <h4 class="m-0"><img src="/assets/img/blank-profile-picture.webp" class="mr-1"
                                 alt="profile" /> Bienvenue
                             <?= esc($nom) ?>
                         </h4>

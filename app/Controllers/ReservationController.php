@@ -57,6 +57,12 @@ class ReservationController extends BaseController
         $creneauModel = new CreneauModel();
         $joueurModel = new JoueurModel();
 
+        // Ensure the player exists
+        $joueur = $joueurModel->find($user['id']);
+        if (!$joueur) {
+            return redirect()->back()->with('error', 'Utilisateur non trouvé.');
+        }
+
         $validation = \Config\Services::validation();
         if (
             !$this->validate([
@@ -84,7 +90,6 @@ class ReservationController extends BaseController
         }
 
         try {
-
             $reservationModel->save([
                 'joueur_id' => $user['id'],
                 'terrain_id' => $terrain['id'],
@@ -95,12 +100,9 @@ class ReservationController extends BaseController
             ]);
             $creneauModel->update($creneau['id'], ['disponible' => 0]);
 
-
-            $historique_reservations = $user['historique_reservations'] ?? [];
-
-
+            $historique_reservations = $joueur['historique_reservations'] ?? [];
+            $historique_reservations = []; 
             $historique_reservations[] = $reservationModel->getInsertID();
-
 
             $joueurModel->update($user['id'], [
                 'historique_reservations' => $historique_reservations
@@ -111,6 +113,7 @@ class ReservationController extends BaseController
             return redirect()->back()->with('error', 'Erreur lors de la réservation : ' . $e->getMessage());
         }
     }
+
 
 
     public function delete($id)

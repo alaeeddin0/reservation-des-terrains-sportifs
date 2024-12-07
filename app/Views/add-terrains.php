@@ -79,11 +79,12 @@
 								<a href="/Terrain"><img src="/assets/img/tt.png" alt="sidebar_img"
 										style="width: 30px; height: 30px; object-fit: cover;"> <span>Terrains</span></a>
 							</li>
-							
+
 						</ul>
 						<ul class="logout">
 							<li>
-								<a href="/logout"><img src="/assets/img/logout.svg" alt="sidebar_img"><span>Log
+								<a href="<?= site_url('logout') ?>"><img src="/assets/img/logout.svg"
+										alt="sidebar_img"><span>Log
 										out</span></a>
 							</li>
 						</ul>
@@ -126,15 +127,6 @@
 							<label for="prix">Prix:</label>
 							<input type="text" name="prix" id="prix" placeholder="Prix du terrain" required>
 						</div>
-
-						<div class="form-group">
-							<label for="disponibilites">Disponibilité:</label>
-							<select name="disponibilites" id="disponibilites">
-								<option value="Disponible">Disponible</option>
-								<option value="Non disponible">Non disponible</option>
-							</select>
-						</div>
-
 						<button type="submit">Ajouter Terrain</button>
 					</form>
 

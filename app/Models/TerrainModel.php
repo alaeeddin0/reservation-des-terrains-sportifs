@@ -10,14 +10,14 @@ class TerrainModel extends Model
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['localisation', 'prix', 'type_sport', 'disponibilites'];
+    protected $allowedFields = ['localisation','image_url', 'prix', 'type_sport'];
 
     
     protected $validationRules = [
         'localisation'  => 'required|string|max_length[255]',
         'prix'           => 'required|decimal',
         'type_sport'     => 'required|in_list[Football,Tennis,Basketball]',
-        'disponibilites' => 'required|in_list[Disponible,Non disponible]', 
+      
     ];
 
     
@@ -34,10 +34,6 @@ class TerrainModel extends Model
         'type_sport' => [
             'required' => 'Le type de sport est obligatoire',
             'in_list'  => 'Le type de sport doit être l\'un des suivants : Football, Tennis, Basketball',
-        ],
-        'disponibilites' => [
-            'required' => 'La disponibilité est obligatoire',
-            'in_list'  => 'La disponibilité doit être soit "Disponible" ou "Non disponible"',
         ],
     ];
 

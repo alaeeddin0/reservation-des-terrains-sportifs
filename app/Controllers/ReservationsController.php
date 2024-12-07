@@ -1,13 +1,13 @@
 <?php
 namespace App\Controllers;
 
-use App\Models\ReservationsModel;
+use App\Models\ReservationssModel;
 
 class ReservationsController extends BaseController
 {
     public function index()
     {
-        $model = new ReservationsModel();
+        $model = new ReservationssModel();
 
 
         $reservations = $model->getAllReservationsWithDetails();
@@ -21,7 +21,7 @@ class ReservationsController extends BaseController
 
     public function updateStatut($id)
     {
-        $model = new ReservationsModel();
+        $model = new ReservationssModel();
 
 
         $newStatut = $this->request->getPost('statut');

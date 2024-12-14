@@ -1,0 +1,5 @@
+joueur : example@gmail.com
+mot de passe : 123456
+
+admin : salah22j@gmail.com
+mot de passe :123456

@@ -1,0 +1,5 @@
+joueur : example@gmail.com (partie de Alaa eddin Benslimane)
+mot de passe : 123456
+
+admin : salah22j@gmail.com (partie de Fatima Ezzahrae Benhammadi)
+mot de passe :123456
